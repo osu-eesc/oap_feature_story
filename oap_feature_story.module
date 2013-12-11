@@ -1,0 +1,22 @@
+<?php
+
+include_once('oap_feature_story.features.inc');
+
+/**
+ * Implements hook_theme_registry_alter()
+ *
+ * Modify theme to use our template file
+ */
+function oap_feature_story_theme_registry_alter(&$theme_registry) {
+  $path = drupal_get_path('module', 'oap_feature_story') . '/templates';
+  $theme_registry['views_view_unformatted__oap_feature_story__block']['path'] = $path;
+  $theme_registry['views_view_unformatted__oap_feature_story__block']['theme path'] = $path;
+  $theme_registry['views_view_unformatted__oap_feature_story__block']['template'] = 'oap_feature_story_style';
+  $theme_registry['views_view_unformatted__oap_feature_story__block']['type'] = 'module';
+}
+
+function oap_feature_story_preprocess_html(&$variables) {
+  if (isset($variables['page']['features'])){
+    $variables['classes_array'][] = 'fs-in-features';
+  }
+}
