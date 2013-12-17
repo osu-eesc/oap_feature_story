@@ -61,9 +61,11 @@
   max-width: 100%;
   display: block;
   height: auto; /* overwrites height in html */
-  /* centering */
-  position: absolute;
   margin: auto;
+}
+
+#block-views-oap-feature-story-block .view-oap-feature-story.old .views-field-field-story-header img { /* for issues with inconsistent sizes only (.old) */
+  position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
@@ -171,7 +173,7 @@ html.js .view-oap-feature-story span.views-throbbing {
 /* end arrow controls */
 
 /* LIVE */
-.view-oap-feature-story.view-display-id-block .fs-row {
+.view-oap-feature-story.view-display-id-block.old .fs-row { /* for issues with inconsistent sizes only (.old) */
   min-height: 175px;
 }
 

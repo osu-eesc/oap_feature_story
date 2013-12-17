@@ -18,7 +18,11 @@ jQuery(document).ready(function($) {
   });
   
   /* Sets each slide to the height of the largest to prevent page resize on change */
-  var maxHeight = Math.max.apply(null, $("#osu-feature-story .item img").map(function(index, elem){return $(elem).attr('height')}).get());
-  $('#osu-feature-story .item').height(maxHeight);
-  
+  var year = $('title').text().replace( /\D+/g, '');
+  if (year < 2008) {
+    $('.view-oap-feature-story').addClass('old');
+    var maxHeight = Math.max.apply(null, $("#osu-feature-story .item img").map(function(index, elem){return $(elem).attr('height')}).get());
+    $('#osu-feature-story .item').height(maxHeight);
+  }
+
 });
